@@ -95,7 +95,7 @@ Update your password in all `.java` files:
 DriverManager.getConnection(
     "jdbc:mysql://localhost:3306/pothole_db",
     "root",
-    "your_password"
+    "India@11"
 );
 ```
 

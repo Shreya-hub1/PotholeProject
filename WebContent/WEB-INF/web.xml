@@ -1,0 +1,51 @@
+<web-app>
+
+<servlet>
+    <servlet-name>AddPothole</servlet-name>
+    <servlet-class>AddPotholeServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>AddPothole</servlet-name>
+    <url-pattern>/addPothole</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>ViewPotholes</servlet-name>
+    <servlet-class>ViewPotholes</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ViewPotholes</servlet-name>
+    <url-pattern>/viewPotholes</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>UpdateForm</servlet-name>
+    <servlet-class>UpdateForm</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>UpdateForm</servlet-name>
+    <url-pattern>/updateForm</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>UpdatePothole</servlet-name>
+    <servlet-class>UpdatePothole</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>UpdatePothole</servlet-name>
+    <url-pattern>/updatePothole</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>DeletePothole</servlet-name>
+    <servlet-class>DeletePothole</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>DeletePothole</servlet-name>
+    <url-pattern>/deletePothole</url-pattern>
+</servlet-mapping>
+
+</web-app>

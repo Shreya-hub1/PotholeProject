@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Pothole</title>
+
+    <style>
+        :root {
+            --primary: #4facfe;
+            --danger: #4facfe;
+            --danger-hover: #d93636;
+            --bg-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --white: #ffffff;
+            --text: #333;
+            --shadow: 0px 8px 30px rgba(0,0,0,0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text);
+        }
+
+        .container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--text);
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--danger);
+            outline: none;
+            box-shadow: 0 0 8px rgba(255, 77, 77, 0.2);
+        }
+
+        .btn-delete {
+            background: var(--danger);
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+        }
+
+        .btn-delete:hover {
+            background: var(--danger-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            background: transparent;
+            color: #888;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            color: var(--text);
+        }
+    </style>
+
+    <script>
+        function confirmDelete(event) {
+            const id = document.getElementById("potholeId").value;
+            if (!id) return false;
+            
+            const confirmed = confirm(`Are you sure you want to permanently delete Pothole ID: ${id}?`);
+            if (!confirmed) {
+                event.preventDefault(); // Stop the form from submitting
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Delete Record</h2>
+        <p>Warning: This action cannot be undone.</p>
+        
+        <form action="deletePothole" method="post" onsubmit="confirmDelete(event)">
+            <div class="form-group">
+                <label for="potholeId">Pothole Reference ID</label>
+                <input type="number" id="potholeId" name="id" placeholder="Enter ID number" required>
+            </div>
+
+            <button type="submit" class="btn-delete">Delete Pothole</button>
+        </form>
+
+        <button class="btn-back" onclick="window.location.href='index.html'">
+            &larr; Return to Dashboard
+        </button>
+    </div>
+
+</body>
+</html>

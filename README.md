@@ -8,13 +8,12 @@ The **Pothole Detection & Reporting System** is a web-based application that all
 
 ## 🚀 Features
 
-* 🔐 User Registration & Login
+
 * ➕ Add Pothole (location, area, severity)
 * 📋 View All Potholes
 * ✏️ Update Pothole Status (e.g., Fixed)
 * ❌ Delete Pothole
-* 👤 Session Management (login/logout)
-* 🔗 Each pothole linked to a user (`reported_by`)
+
 
 ---
 
